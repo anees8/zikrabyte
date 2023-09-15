@@ -109,7 +109,7 @@ class UsersController extends Controller
         $request->session()->forget('personalinfo');
         
   
-        return redirect()->route('users.index');
+        return redirect()->route('users.index')->with('success', 'Form submitted successfully.');
     }
 
     /**

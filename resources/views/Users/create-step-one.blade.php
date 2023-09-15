@@ -1,9 +1,22 @@
 @extends('layouts.app')  <!-- Assuming you have a master layout file -->
 
 @section('content')
-<div class="container mt-5">
+<div class="container mt-2">
     <div class="row justify-content-center">
         <div class="col-md-10">
+       
+        @if(session('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ session('success') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <script>
+        setTimeout(function() {
+        $('.alert').fadeOut('slow'); // Hide the alert after a few seconds
+        }, 5000); // Adjust the timing (in milliseconds) as needed
+        </script>
+        @endif
+       
             <form action="{{ route('users.create.step.one.post') }}" method="POST">
                 @csrf
                 <div class="progress my-2">
