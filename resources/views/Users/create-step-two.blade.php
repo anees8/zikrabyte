@@ -6,6 +6,9 @@
         <div class="col-md-10">
             <form action="{{ route('users.create.step.two.post') }}" method="POST">
                 @csrf
+                <div class="progress my-2">
+  <div class="progress-bar" role="progressbar" style="width: 33.333%;" aria-valuenow="33.33" aria-valuemin="0" aria-valuemax="100">33.33%</div>
+</div>
                 <div class="card">
                     <div class="card-header">Step 2: Contact Information</div>
   

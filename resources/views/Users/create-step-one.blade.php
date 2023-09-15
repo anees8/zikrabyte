@@ -1,13 +1,16 @@
 @extends('layouts.app')  <!-- Assuming you have a master layout file -->
 
 @section('content')
-<div class="container mt-3">
+<div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-10">
             <form action="{{ route('users.create.step.one.post') }}" method="POST">
                 @csrf
-  
+                <div class="progress my-2">
+  <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">25%</div>
+</div>
                 <div class="card">
+                
                     <div class="card-header">Step 1: Personal Info</div>
   
                     <div class="card-body">
